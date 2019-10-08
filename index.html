@@ -2,8 +2,10 @@
 <html>
 
 <head>
+    <title>Arian Gagica's Website</title>
     <meta name="viewport" content="width=100%">
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
@@ -15,6 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -30,47 +33,47 @@
     <div class="container">
         <h4 class="header show-on-scroll" style="text-align: center">Willkommen auf meinem Profil!</h4>
         <img src="Profilbild.jpg" class="inline-photo show-on-scroll">
-        <h4 class="header show-on-scroll" style="text-align: center">Über mich</h4>
+        <h4 id="ueber" class="header show-on-scroll" style="text-align: center">Über mich</h4>
         <p>Mein Name ist Arian Gagica und ich komme aus Netstal. Zurzeit studiere ich Wirtschaftsinformatik mit
             Vertiefung Business Software Development.</br>
             </br>
             Auf dieser Seite sind jegliche Informationen über mich zu finden.</br>
             </br>
-            <h4 class=" header show-on-scroll">Mein Lebenslauf und meine Erfahrungen.</h4>
-            <strong>
-                <ul>
-                    <li class="header show-on-scroll">2017-2020 Wirtschaftsinformatik-Studium FHSG</li>
-                    <img src="FHSG_aussen.jpg_170821_140827.jpg" class="inline-photo show-on-scroll">
-                    <li>2014-2016 Informatik-Studium HSR</li>
-                    <img src="hsr_luftaufnahme.jpg" class="inline-photo show-on-scroll">
-                    <li>2013-2014 Berufsmatura für Erwachsene</li>
-                    <img src="kbs.jpg" class="inline-photo show-on-scroll">
-                    <li>2010-2013 Lehre als Kaufmann bei Hans Eberle AG</li>
-                    <img src="hans_eberle-556x301.jpg" id="extrawide" class="inline-photo show-on-scroll">
-                    <li>2007-2010 Sekundarschule in Glarus</li>
-                    <img src="Buchholz_Glarus.jpg" id="extrawide" class="inline-photo show-on-scroll">
-                    <li>2001-2007 Primarschule in Netstal</li>
-                    <img src="netstal.jpg" id="extrawide" class="inline-photo show-on-scroll">
-                    <li>1995 Geboren in Gjilan, Kosovo</li>
-                    <video id="extrawide" class="inline-photo show-on-scroll" src="gjilan.mp4" autoplay=on muted replay
-                        width="1080"></video>
-                </ul>
-            </strong>
             <p> In meiner Freizeit bin ich oft am Computer, wo ich programmiere, neue Skills erlerne, Youtube schaue
                 oder mich
                 auf
                 dem laufenden halte. Sonst verbringe ich auch Zeit meinen Körper fit zu halten, mit Fitness und
                 Joggen.
             </p>
-
-
+            <h4 id="lebenslauf" class=" header show-on-scroll">Mein Lebenslauf und meine Erfahrungen</h4>
+            <strong>
+                <ul>
+                    <li class="show-on-scroll">1995 Geboren in Gjilan, Kosovo</li>
+                    <video id="extrawide" class="inline-photo show-on-scroll" src="gjilan.mp4" autoplay=on muted loop
+                        width="1080"></video>
+                    <li class="show-on-scroll">2001-2007 Primarschule in Netstal</li>
+                    <img src="netstal.jpg" id="extrawide" class="inline-photo show-on-scroll">
+                    <li class="show-on-scroll">2007-2010 Sekundarschule in Glarus</li>
+                    <img src="Buchholz_Glarus.jpg" id="extrawide" class="inline-photo show-on-scroll">
+                    <li class="show-on-scroll">2010-2013 Lehre als Kaufmann bei Hans Eberle AG</li>
+                    <img src="hans_eberle-556x301.jpg" class="inline-photo show-on-scroll">
+                    <li class="show-on-scroll">2013-2014 Berufsmatura für Erwachsene</li>
+                    <img src="kbs.jpg" class="inline-photo show-on-scroll">
+                    <li class="show-on-scroll">2014-2016 Informatik-Studium HSR</li>
+                    <img src="hsr_luftaufnahme.jpg" class="inline-photo show-on-scroll">
+                    <li class="show-on-scroll">2017-2020 Wirtschaftsinformatik-Studium FHSG</li>
+                    <img id="extrawide" src="FHSG_aussen.jpg_170821_140827.jpg" class="inline-photo show-on-scroll">
+                </ul>
+            </strong>
         </p>
+        <h4 id="documents" class=" header show-on-scroll">Meine Dokumente</h4>
 
     </div>
     <div class="footer">
         <p> Telefon: 076 399 74 43, Mail: gagicaarian@gmail.com
         </p>
     </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Go to the Top! ↑</button>
 </body>
 <script src="show-on-scroll.js"></script>
 
