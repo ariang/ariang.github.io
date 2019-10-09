@@ -1,0 +1,220 @@
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+		'Helvetica Neue', sans-serif, sans-serif;
+	font-size: 350%;
+	margin: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto 1fr;
+}
+
+h2 {
+	text-align: center;
+}
+
+/* Add a black background color to the top navigation */
+
+.topnav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: grey;
+	font-size: 5px;
+	top: 0;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	overflow: visible;
+	z-index: 3;
+}
+
+/* Style the links inside the navigation bar */
+
+.topnav a {
+	color: #f2f2f2;
+	padding: 30px;
+	text-decoration: none;
+	font-size: 30px;
+}
+
+/* Change the color of links on hover */
+
+.topnav a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+/* Add a color to the active/current link */
+
+.topnav a.active {
+	background-color: #333;
+	color: white;
+}
+
+.container {
+	margin-left: 25%;
+	margin-right: 25%;
+	background-color: whitesmoke;
+	width: 90%;
+	grid-row-start: 2;
+	grid-row-end: 3;
+	justify-self: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.inline-photo {
+	border: 0.2em solid #fff;
+	border-radius: .25em;
+	box-shadow: 1em 1em 2em .25em rgba(0, 0, 0, .2);
+	margin: 2em auto;
+	opacity: 0;
+	transform: translateY(4em) rotateZ(0deg);
+	transition: transform 6s .25s cubic-bezier(0, 1, .3, 1), opacity .7s .25s ease-out;
+	max-width: 700px;
+	width: 100%;
+	will-change: transform, opacity;
+}
+.inline-photo.is-visible {
+	opacity: 1;
+	transform: rotateZ(0deg);
+}
+
+.container h4 {
+	opacity: 0;
+	transition: transform 4s .25s cubic-bezier(0, 1, .3, 1), opacity .3s .25s ease-out;
+	padding-top: 10px;
+	font-size: 60px;
+}
+
+.container h4.is-visible {
+	opacity: 1;
+}
+.container li {
+	opacity: 0;
+	transition: transform 4s .25s cubic-bezier(0, 1, .3, 1), opacity .3s .25s ease-out;
+	padding-top: 10px;
+	font-size: 45px;
+}
+
+.container li.is-visible {
+	opacity: 1;
+}
+
+ul {
+	list-style-type: none;
+	padding-inline-start: 0;
+}
+
+li {
+	padding-top: 30px;
+	font-size: 20px;
+}
+.footer {
+	box-sizing: border-box;
+	text-align: center;
+	background-color: grey;
+	padding: 40px;
+	top: 0;
+	width: 100%;
+	height: auto;
+	grid-column-start: 1;
+	grid-column-end: 6;
+	grid-row-start: 3;
+	grid-row-end: auto;
+}
+p {
+	font-size: 30px;
+}
+#extrawide {
+	max-width: 1110px;
+}
+
+@media screen and (max-width: 520px) {
+	body {
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+			'Helvetica Neue', sans-serif, sans-serif;
+		font-size: 200%;
+		margin: 0;
+		width: 100%;
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: auto auto 1fr;
+	}
+	.topnav {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: grey;
+		font-size: 1px;
+		top: 0;
+		grid-column-start: 1;
+		grid-column-end: 1;
+		grid-row-start: 1;
+		grid-row-end: 2;
+		position: sticky;
+		overflow: visible;
+		z-index: 3;
+	}
+	.container {
+		margin-left: 25%;
+		margin-right: 25%;
+		background-color: whitesmoke;
+		float: left;
+		grid-column-start: 1;
+		grid-column-end: 1;
+		grid-row-start: 2;
+		grid-row-end: 3;
+		justify-self: center;
+		justify-content: center;
+		text-align: center;
+	}
+	.inline-photo {
+		border: 0.2em solid #fff;
+		border-radius: .25em;
+		box-shadow: 1em 1em 2em .25em rgba(0, 0, 0, .2);
+		margin: 2em auto;
+		opacity: 0;
+		transition: transform 4s .25s cubic-bezier(0, 1, .3, 1), opacity .3s .25s ease-out;
+		max-width: max-content;
+		width: 100%;
+		will-change: transform, opacity;
+	}
+	.topnav a {
+		color: #f2f2f2;
+		padding: 6px;
+		text-decoration: none;
+		font-size: 20px;
+	}
+
+	#navbar {
+		padding: 20px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
+	}
+	#navbar a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+	#navbar-right {
+		float: none;
+	}
+}
+
+#myBtn {
+	display: none; /* Hidden by default */
+	position: fixed; /* Fixed/sticky position */
+	bottom: 20px; /* Place the button at the bottom of the page */
+	right: 30px; /* Place the button 30px from the right */
+	z-index: 99; /* Make sure it does not overlap */
+	border: none; /* Remove borders */
+	outline: none; /* Remove outline */
+	background-color: gray; /* Set a background color */
+	color: white; /* Text color */
+	cursor: pointer; /* Add a mouse pointer on hover */
+	padding: 15px; /* Some padding */
+	border-radius: 10px; /* Rounded corners */
+	font-size: 30px; /* Increase font size */
+}
+
+#myBtn:hover {
+	background-color: #555; /* Add a dark-grey background on hover */
+}
