@@ -1,8 +1,8 @@
-$.getJSON('http://matthiasbaldauf.com/swi1hs19/tools', function(data) {
+$.getJSON('https://matthiasbaldauf.com/swi1hs19/tools', function(data) {
 	$.each(data, function(id, article) {
 		var card =
 			'<div class="card animated bounceInRight slow" style="width: 20rem;"><div class="card-body d-flex flex-column">';
-		var bald = 'http://matthiasbaldauf.com/swi1hs19/';
+		var bald = 'https://matthiasbaldauf.com/swi1hs19/';
 		var img = '<img class="card-img-top" src="' + bald + article.img + '" alt="Wrench">';
 		var title = '<h5 class= "card-title">' + article['label-de'] + ' / ' + article['label-en'] + '</h5 >';
 		var price = '<p class="card-text price">' + 'Preis: CHF ' + article['price-chf'] + '0' + '</p>';
@@ -38,7 +38,7 @@ $.getJSON('http://matthiasbaldauf.com/swi1hs19/tools', function(data) {
 	});
 });
 //Projekte einholen
-$.getJSON('http://matthiasbaldauf.com/swi1hs19/projects', function(data) {
+$.getJSON('https://matthiasbaldauf.com/swi1hs19/projects', function(data) {
 	$.each(data, function(id, project) {
 		$('.projects').append('<option value="' + project.id + '">' + project.label + '</option>');
 	});
