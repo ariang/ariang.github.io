@@ -1,0 +1,161 @@
+<html>
+
+<head>
+	<!---stylesheets-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.css"
+		integrity="sha256-ikw4zfRFBqwF4UfeTqXBKsiCLtOSOD0XWliIEpPLO2M=" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+		integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+		crossorigin="" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+	<!---meta-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>YouTool</title>
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body class="bg-light">
+	<!---Navigation Bar-->
+	<nav class="bg-light shadow-lg p-3 mb-5 bg-white rounded">
+		<h1 class="display-4"><a href="#">YouTool</a></h1>
+
+	</nav>
+	<!---Container-->
+	<div class="container-fluid">
+		<div class="row">
+
+			<!---Cart-Items-->
+			<div class="col-3 sidebar animated bounceInLeft slow">
+				<h4 class="display-4">Meine Reservierung</h4>
+
+				<div class="search">
+					<div class="input-group input-group-lg">
+						<input type="text" id="myInput" class="form-control" placeholder="search..."
+							aria-label="searchbar" aria-describedby="button-addon2">
+						<div class="input-group-append">
+							<button class="btn btn-lg btn-outline-secondary" type="button">
+								<i class="fas fa-search"></i>
+							</button>
+							<button class="btn btn-lg btn-outline-primary" type="button" id="button-addon2">
+								<i class="fas fa-shopping-cart"></i></i>
+							</button>
+						</div>
+					</div>
+
+				</div>
+				<h1 class="display-4">Mein Warenkorb</h3>
+
+
+					<ul class="list-group cart">
+						<li class="list-group-item">Cras justo odio</li>
+					</ul>
+					<form id="inputForm">
+						<p class="lead">
+							Reservierungsinformationen
+						</p>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="inputFirstname">Vorname</label>
+								<input type="text" class="form-control" id="inputFirstname" placeholder="Vorname"
+									required>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="inputPassword4">Nachname</label>
+								<input type="text" class="form-control" id="inputPassword4" placeholder="Nachname"
+									required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">E-mail Addresse</label>
+							<input type="email" class="form-control" id="exampleInputEmail1"
+								aria-describedby="emailHelp" placeholder="E-Mail">
+							<small id="emailHelp" class="form-text text-muted">Ihre E-Mail wird nicht
+								weitergegeben.</small>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-12">
+								<label for="inputComment">Kommentar</label>
+								<input type="text" class="form-control" id="inputComment"
+									placeholder="optionaler Kommentar...">
+							</div>
+
+						</div>
+						<label for="inputfromDate">Reservierungszeitraum:</label>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<input id="fromDate" type='text' class="datepicker-here form-control" data-language='de'
+									data-minDate='new Date()' placeholder="Reservierung von" autocomplete="off"
+									required />
+							</div>
+							<div class="form-group col-md-6">
+								<input id="fromDate" type='text' class="datepicker-here form-control" data-language='de'
+									data-minDate='new Date()' placeholder="Reservierung bis" autocomplete="off"
+									required />
+							</div>
+
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-12">
+								<label for="inputProject">Projektauswahl:</label>
+								<select class="custom-select projects" id="inlineFormCustomSelect" placeholder="Projekt"
+									required>
+									<option selected value="">Wähle Projekt aus</option>
+								</select>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary">Reservierung abschliessen</button>
+					</form>
+					<div id="mapid"></div>
+			</div>
+
+
+			<!---Main Container-->
+			<div class="col-9">
+				<div class="row animated bounceInDown">
+					<h1 class="display-2">Hello and welcome to YouTool</h1>
+				</div>
+				<div class="row animated bounceInDown">
+					<h1 class="display-4">Our Products</h1>
+				</div>
+				<!---SearchBar-->
+
+				<!---item-Container-->
+				<div class="row items" id="items">
+
+					<!--shop-item -->
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!---jquery + bootstrap-->
+	<script src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.js"
+		integrity="sha256-OLaRYiuHs2MI4UUBtEgS3h2/88KzBApHNvbxEbEylAo=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/i18n/datepicker.de.js"
+		integrity="sha256-vn/CuVv/PnSP4ihz+Azjal2PWGY7g4REcQerP12xHVE=" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+		integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+		crossorigin=""></script>
+	<!---shopitems-->
+	<script src="lists.js"></script>
+
+</body>
+
+
+</html>

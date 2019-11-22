@@ -1,0 +1,36 @@
+.card {
+	position: relative;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+.fa-info-circle {
+	font-size: 24;
+}
+.carousel-inner > .item {
+	height: 50px;
+}
+a,
+a:active,
+a:hover {
+	text-decoration: none;
+	color: black;
+}
+#inputForm {
+	margin-top: 30px;
+}
+.sidebar {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+#mapid {
+	height: 400px;
+	z-index: 0;
+}
+.search {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.cart-group {
+	position: absolute;
+	bottom: 0;
+}
