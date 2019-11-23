@@ -217,3 +217,11 @@ p {
 #myBtn:hover {
 	background-color: #555; /* Add a dark-grey background on hover */
 }
+.card-title {
+	font-weight: 200;
+	font-size: 30px;
+}
+.card-text {
+	font-weight: 100;
+	font-size: 20px;
+}
