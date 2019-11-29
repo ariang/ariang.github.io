@@ -29,7 +29,7 @@
 	<!---Navigation Bar-->
 	<div class="container top border-left border-right border-bottom pt-4 pb-1">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-12 pb-3 border-bottom">
 				<div class="d-flex justify-content-center">
 					<i class="display-4 fas fa-hammer text-muted" style="opacity: 20%;"></i>
 					<h1 class="display-4 pl-5 pr-5"><a href="#">YouTool </a></h1>
@@ -46,7 +46,7 @@
 		</div>
 		<div class="row">
 			<div class="col-12">
-				<a class="btn btn-sm btn-block p-2 mt-3" data-toggle="collapse" href="#ReservationsInfos" role="button"
+				<a class="btn btn-sm btn-block p-2 mt-1" data-toggle="collapse" href="#ReservationsInfos" role="button"
 					aria-expanded="false" aria-controls="ReservationsInfos">
 					Reservierungsinformationen</br>
 					<i class="text-muted fas fa-chevron-down"></i>
@@ -61,15 +61,16 @@
 			<div class="row header ">
 				<!--Reservierungs-Form-->
 				<div class="col-12 animated fadeInUp collapse border-bottom bg-light" id="ReservationsInfos">
-					<form class="was-validated" id="inputForm">
-						<p class="lead border-bottom pb-3">
-							<a data-toggle="collapse" href="#ReservationsInfos" role="button" aria-expanded="false"
-								aria-controls="ReservationsInfos">
+					<form class="was-validated" id="inputForm"><a data-toggle="collapse" href="#ReservationsInfos"
+							role="button" aria-expanded="false" aria-controls="ReservationsInfos">
+							<p class="lead border-bottom pb-3">
+
 								&nbsp;&nbsp;<i class="text-secondary fas fa-user-check border-right">&nbsp;&nbsp;
 								</i>
 								Reservierungsinformationen
-							</a>
-						</p>
+
+							</p>
+						</a>
 						<div class="form-row">
 							<div class="form-group col-md-6">
 								<label for="inputFirstname">Vorname</label>
@@ -122,11 +123,12 @@
 							abschliessen <i class=" fas fa-paper-plane"></i></button>
 					</form>
 					<!--Karte-->
-					<div class="hidden">
+					<div class="hidden pb-3">
 						<p class="lead">
+							&nbsp;&nbsp;<i class="text-secondary fas fa-map-marked-alt border-right">&nbsp;&nbsp;</i>
 							Abholungsort auf der Karte
 						</p>
-						<div id="mapid"></div>
+						<div class="rounded" id="mapid"></div>
 					</div>
 				</div>
 			</div>
@@ -135,17 +137,15 @@
 				<div id="Warenkorbinhalte" class="collapse col-12 table-responsive border-bottom bg-light"
 					aria-labelledby="headingOne" data-parent="#Warenkorbinhalte">
 					</br>
-
-					<p class="lead">
-						<a data-toggle="collapse" id="button-addon2" data-target="#Warenkorbinhalte"
-							href="#Warenkorbinhalte">
+					<a data-toggle="collapse" id="button-addon2" data-target="#Warenkorbinhalte"
+						href="#Warenkorbinhalte">
+						<p class="lead">
 							&nbsp;&nbsp;<i class="text-secondary fas fa-shopping-cart border-right">&nbsp;&nbsp;
 							</i>
 							Mein
 							Warenkorb
-						</a>
-					</p>
-
+						</p>
+					</a>
 					<table class="table table-striped ">
 						<thead>
 							<tr>
