@@ -2,7 +2,7 @@
 $.getJSON('http://matthiasbaldauf.com/swi1hs19/tools', function (data) {
 	$.each(data, function (id, article) {
 		var card=
-			'<div class="card animated bounceInRight slow" style="width: 14rem;"><div class="card-body d-flex flex-column">';
+			'<div class="card animated fadeIn"><div class="card-body d-flex flex-column">';
 		var bald='http://matthiasbaldauf.com/swi1hs19/';
 		var img='<img class="card-img-top" src="'+bald+article.img+'" alt="Wrench">';
 		var title='<h5 class= "card-title" lang="de">'+article['label-de']+'</h5><h5 class= "card-title" lang="en">'+article['label-en']+'</h5 >';
@@ -11,17 +11,24 @@ $.getJSON('http://matthiasbaldauf.com/swi1hs19/tools', function (data) {
 		if (article.stock!==0) {
 			//Wenn Artikel Vorhanden ist
 			var cart='<div class="input-group mb-3 mt-auto"><input type="number" id="qty" min="1" value="" class="form-control" required="true"><button class="btn cartbtn btn-primary"  value="'+article.id+'"><i class="fas fa-cart-plus"></i></button>';
+			var info='<button type="button" class="btn btn-secondary info" data-toggle="popover" data-trigger="focus" title="Lagerbestand" data-content="Es sind zurzeit '+article.stock+' Stück vorhanden"><i class="fas fa-info-circle"></i></button></div>';
 		} else {
 			var cart='<div class="input-group mb-3 mt-auto"><input type="text" value="" class="form-control" disabled><button class="btn cartbtn btn-primary"  value="'+article.id+'" disabled> <i class="fas fa-cart-plus"></i></button>';
-		}
-		if (article.stock!==0) {
-			var info='<button type="button" class="btn btn-secondary info" data-toggle="popover" data-trigger="focus" title="Lagerbestand" data-content="Es sind zurzeit '+article.stock+' Stück vorhanden"><i class="fas fa-info-circle"></i></button> </div>';
-		} else {
 			var info='<button type="button" class="btn btn-danger info" data-toggle="popover" data-trigger="focus" title="Lagerbestand" data-content="Zurzeit nich an Lager"><i class="fas fa-info-circle"></i></button></div>';
+
 		}
 		$('.items').append(card+img+title+price+cart+info);
-	});
 
+	});
+	$("div.holder").jPages({
+		containerID: "itemContainer",
+		perPage: 8,
+		startPage: 1,
+		startRange: 1,
+		midRange: 5,
+		endRange: 1,
+		scrollBrowse: true
+	});
 	//stock popover
 	$(function () {
 		$('[data-toggle="popover"]').popover();
@@ -272,3 +279,4 @@ function scrollFunction() {
 		$('#topBtn').css('display', 'none');
 	}
 }
+/* when document is ready */
