@@ -29,6 +29,7 @@ $.getJSON('http://matthiasbaldauf.com/swi1hs19/tools', function (data) {
 		endRange: 1,
 		scrollBrowse: true
 	});
+
 	//stock popover
 	$(function () {
 		$('[data-toggle="popover"]').popover();
