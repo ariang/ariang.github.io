@@ -1,0 +1,60 @@
+.boxes{
+	width: 80%;
+	margin: auto;
+	text-align:center;
+	margin-bottom: 270px;
+}
+.boxes.second{
+	margin-bottom: 100px;
+}
+
+#btns{
+	padding:20px;
+	background:#f4f4f4;
+	margin-bottom:20px;
+}
+#btns button {
+	background:#fff;
+	padding: 5px 10px;
+	border:0;
+}
+#btns .fa{
+	font-size: 30px;
+}
+#btns .fa-play-circle{
+	color:green
+}
+
+#btns .fa-pause-circle{
+	color:red
+}
+
+
+.box{
+	position: relative;
+	width:100px;
+	height: 100px;
+	margin: 4px;
+	display: inline-block;
+}
+.demo {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 200px;
+	padding-top: 35px;
+	
+}
+
+#JSobjProp{
+	font-size: 60px;
+}
+
+.red{background-color:red;z-index:4;}
+.blue{background-color:blue;z-index:3;}
+.green{background-color:green;z-index:2;}
+.yellow{background-color:yellow; }
+
