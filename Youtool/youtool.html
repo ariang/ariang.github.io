@@ -1,0 +1,238 @@
+<html>
+
+<head>
+	<!---stylesheets-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.css"
+		integrity="sha256-ikw4zfRFBqwF4UfeTqXBKsiCLtOSOD0XWliIEpPLO2M=" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+		integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+		crossorigin="" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/css/flag-icon.min.css"
+		integrity="sha256-NkXMfPcpoih3/xWDcrJcAX78pHpfwxkhNj0bAf8AMTs=" crossorigin="anonymous" />
+
+	<!---meta-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<title>YouTool</title>
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body class="bg-light">
+
+	<!---Navigation Bar-->
+	<div class="container top border-left border-right border-bottom pt-4 pb-1">
+		<div class="row">
+			<div class="col-12 pb-3 border-bottom">
+				<div class="d-flex justify-content-center">
+					<h1 class="display-4 pr-3"><a href="/">YouTool </a></h1>
+					<i class="display-4 fas fa-toolbox text-muted pt-1" style="opacity: 20%;"></i>
+				</div>
+			</div>
+			<div id="lang-menu">
+				<div> <span class="flag-icon flag-icon-de"></span> DE</div>
+				<ul>
+					<li> <span class="flag-icon flag-icon-de"></span> DE</li>
+					<li> <span class="flag-icon flag-icon-gb"></span> EN</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<a class="btn btn-sm btn-block p-2 mt-1" data-toggle="collapse" href="#ReservationsInfos" role="button"
+					aria-expanded="false" aria-controls="ReservationsInfos">
+					Reservierungsinformationen</br>
+					<i class="text-muted fas fa-chevron-down"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!---Main-Container-->
+	<div class="container main border-left border-right">
+		<div>
+			<div class="row header ">
+				<!--Reservierungs-Form-->
+				<div class="col-12 animated fadeInUp collapse border-bottom bg-light" id="ReservationsInfos">
+					<form class="was-validated" id="inputForm"><a data-toggle="collapse" href="#ReservationsInfos"
+							role="button" aria-expanded="false" aria-controls="ReservationsInfos">
+							<p class="lead border-bottom pb-3">
+
+								&nbsp;&nbsp;<i class="text-secondary fas fa-user-check border-right">&nbsp;&nbsp;
+								</i>
+								Reservierungsinformationen
+
+							</p>
+						</a>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="inputFirstname">Vorname</label>
+								<input type="text" class="form-control" id="inputFirstname" name="firstname"
+									placeholder="Vorname" required>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="inputPassword4">Nachname</label>
+								<input type="text" class="form-control" id="inputPassword4" placeholder="Nachname"
+									name="lastname" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">E-mail Addresse</label>
+							<input type="email" name="email" class="form-control" id="exampleInputEmail1"
+								aria-describedby="emailHelp" placeholder="E-Mail" required>
+							<small id="emailHelp" class="form-text text-muted">Ihre E-Mail wird nicht
+								weitergegeben.</small>
+						</div>
+						<label for="inputfromDate">Reservierungszeitraum</label>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<input id="fromDate" type='text' class="datepicker-here form-control" data-language='de'
+									data-minDate='new Date()' placeholder="Reservierung von" autocomplete="off"
+									required />
+							</div>
+							<div class="form-group col-md-6">
+								<input id="fromDate" type='text' class="datepicker-here form-control" data-language='de'
+									data-minDate='new Date()' placeholder="Reservierung bis" autocomplete="off"
+									required />
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-12">
+								<label for="inputProject">Projektauswahl</label>
+								<select name="projid" class="custom-select projects" id="inlineFormCustomSelect"
+									placeholder="Projekt" required>
+									<option selected value="">Wähle Projekt aus</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-12">
+								<label for="inputComment">Kommentar</label>
+								<input name="comment" type="text" class="form-control" id="inputComment"
+									placeholder="optionaler Kommentar...">
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary float-right mb-3">Reservierung
+							abschliessen <i class=" fas fa-paper-plane"></i></button>
+					</form>
+					<!--Karte-->
+					<div class="hidden pb-3">
+						<p class="lead">
+							&nbsp;&nbsp;<i class="text-secondary fas fa-map-marked-alt border-right">&nbsp;&nbsp;</i>
+							Abholungsort auf der Karte
+						</p>
+						<div class="rounded" id="mapid"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div id="Warenkorbinhalte" class="collapse col-12 table-responsive border-bottom bg-light"
+					aria-labelledby="headingOne" data-parent="#Warenkorbinhalte">
+					</br>
+					<a data-toggle="collapse" id="button-addon2" data-target="#Warenkorbinhalte"
+						href="#Warenkorbinhalte">
+						<p class="lead">
+							&nbsp;&nbsp;<i class="text-secondary fas fa-shopping-cart border-right">&nbsp;&nbsp;
+							</i>
+							Mein
+							Warenkorb
+						</p>
+					</a>
+					<table class="table table-striped ">
+						<thead>
+							<tr>
+								<th scope="col">Artikel:</th>
+								<th scope="col">Anzahl:</th>
+								<th scope="col">Preis pro Stück:</th>
+								<th scope="col">Total:</th>
+								<th scope="col">
+									<button class="btn btn-sm btn-light deletecart"
+										title="Alle Warenkorbinhalte löschen" id="deletecart" type="button"
+										id="button-addon2">
+										<i class="fas fa-eraser"></i></button>
+								</th>
+							</tr>
+						</thead>
+						<tbody class="cartlist">
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+
+			<!--Search+CartBtn-->
+			<div class="row head animated bounceInleft">
+				<div class="col-12">
+					<div class="search">
+						<div class="input-group">
+							<input type="text" id="search" class="form-control" placeholder="search..."
+								aria-label="searchbar" aria-describedby="button-addon2">
+							<div class="input-group-append">
+								<button class="btn btn-outline-secondary" id="cart" type="button" data-toggle="collapse"
+									id="button-addon2" data-target="#Warenkorbinhalte" href="#Warenkorbinhalte"
+									role="button" aria-expanded="false" aria-controls="Warenkorbinhalte">
+									<i class="fas fa-shopping-cart"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!---item-Container-->
+
+			<div class="row items d-flex justify-content-around" id="itemContainer">
+			</div>
+			<div class="holder d-flex justify-content-center mt-5"></div>
+
+		</div>
+
+		<!---TopButton-->
+		<button class="btn btn-sm btn-secondary" type="button" id="topBtn">Zurück nach oben
+			<i class="fas fa-arrow-up"></i>
+		</button>
+
+		<div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+			<div class="toast" data-autohide="true" data-delay="10000"
+				style="position: fixed; top: 100px; right: 20px; z-index: 99;">
+				<div class="toast-header">
+					<strong class="mr-auto">Reservation erfolgreich <i class="far fa-thumbs-up"></i></strong>
+
+					<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="toast-body"> </div>
+			</div>
+		</div>
+		<!---jquery + bootstrap-->
+		<script src="https://code.jquery.com/jquery-3.4.1.js"
+			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+			crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.js"
+			integrity="sha256-OLaRYiuHs2MI4UUBtEgS3h2/88KzBApHNvbxEbEylAo=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/i18n/datepicker.de.js"
+			integrity="sha256-vn/CuVv/PnSP4ihz+Azjal2PWGY7g4REcQerP12xHVE=" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+			integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+			crossorigin=""></script>
+
+		<!---shopitems-->
+		<script src="lists.js"></script>
+		<script src="jPages.js"></script>
+
+</body>
+
+</html>

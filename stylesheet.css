@@ -46,7 +46,6 @@ h2 {
 /* Add a color to the active/current link */
 
 .topnav a.active {
-	background-color: #333;
 	color: white;
 }
 
@@ -217,4 +216,12 @@ p {
 
 #myBtn:hover {
 	background-color: #555; /* Add a dark-grey background on hover */
+}
+.card-title {
+	font-weight: 200;
+	font-size: 30px;
+}
+.card-text {
+	font-weight: 100;
+	font-size: 20px;
 }
