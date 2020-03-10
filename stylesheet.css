@@ -12,6 +12,10 @@ h2 {
 	text-align: center;
 }
 
+.card {
+	margin-right: 10px;
+}
+
 /* Add a black background color to the top navigation */
 
 .topnav {
