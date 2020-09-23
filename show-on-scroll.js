@@ -23,6 +23,10 @@ function loop() {
 // Call the loop for the first time
 loop();
 
+$(document).ready(function() {
+	$('[data-toggle="tooltip"]').tooltip();
+});
+
 function isElementInViewport(el) {
 	// special bonus for those using jQuery
 	if (typeof jQuery === 'function' && el instanceof jQuery) {

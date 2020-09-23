@@ -12,7 +12,9 @@ li {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 14pt;
 }
-
+#img-tooltip {
+	position: absolute;
+}
 h2 {
 	text-align: center;
 }
