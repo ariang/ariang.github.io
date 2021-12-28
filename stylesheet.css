@@ -27,18 +27,18 @@ body {
 #pb {
 	position: absolute;
 	top: 25px;
-	right: 20px;
-	width: 33%;
+	right: 5%;
+	width: 25%;
 	border: 0.05em;
-	border-radius: 100%;
+	border-radius: 33%;
 	border: 0.05em solid light;
 	box-shadow: 0.5em 0.5em 0.1em .1em rgba(0, 0, 0, .10);
 	animation-delay: 18s;
+	margin-top: 30px;
 }
 
 p {
 	--animate-duration: 1s;
-	left: -100px;
 }
 
 p {
@@ -47,8 +47,8 @@ p {
 	box-shadow: 0.5em 0.5em 0.1em .1em rgba(0, 0, 0, .10);
 	padding: 10px;
 	width: max-content;
-	margin-left: 1%;
-	background-color: rgba(236, 236, 236, 0.5);
+	margin-left: 5%;
+	background-color: rgba(236, 236, 236, 0.75);
 }
 p:nth-child(4) {
 	animation-delay: 5s;
